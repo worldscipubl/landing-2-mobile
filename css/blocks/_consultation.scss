@@ -1,0 +1,83 @@
+.consultation {
+  background: $windowBackground;
+  position: relative;
+  height: 375px;
+  margin-top: 45px;
+
+  @include _more-than($bp-xxl-375) {
+    margin-top: #{get-vw(45px, $bp-xxl-375)};
+    height: #{get-vw(375px, $bp-xxl-375)};
+  }
+
+  &__content {
+    position: relative;
+    z-index: $z-index-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+  }
+
+  &__btn {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-family: $fontFamilyPrimary;
+    color: $textColorSecondary;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    @include font-size(14px);
+    text-align: left;
+
+    margin-bottom: 20px;
+
+    @include _more-than($bp-xxl-375) {
+      margin-bottom: #{get-vw(20px, $bp-xxl-375)};
+    }
+
+    &--subtext {
+      @include font-size(16px);
+      display: block;
+      font-family: $fontFamilySecondary;
+
+      margin: 0;
+
+      @include _more-than($bp-xxl-375) {
+        margin: 0;
+      }
+    }
+  }
+
+  &__bg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.scroll-bar {
+  text-align: center;
+  @include padding(8px, 24px, 8px, 24px);
+
+  &__btn {
+    background: none;
+    border: none;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+
+  }
+
+  &__img {
+    object-fit: contain;
+    object-position: bottom;
+  }
+}

@@ -1,0 +1,141 @@
+<section class="audit" id="audit">
+    <h2 class="audit__title container">
+        Предлагаем бесплатно <br>
+        проанализировать статью <br>
+        и рассчитать стоимость <br>
+        необходимых услуг
+    </h2>
+
+    <div class="audit__inner">
+        <form novalidate class="audit__form container" id="dran-n-drop" name="dran-n-drop"
+              action="/"
+              enctype="multipart/form-data" method="post">
+
+            <div class="audit__main">
+                <div class="audit__uploader uploader" id="file-upload-form">
+                    <input class="uploader__input-file" id="file-upload" type="file"
+                           name="fileUpload"
+                           accept=".pdf, .doc, .docx" required>
+                    <label class="uploader__inner" for="file-upload" id="file-drag">
+                        <div class="uploader__img lazy">
+                            <img class="uploader__cloud lazy"
+                                 src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                 data-src="./media/uploader_img.svg"
+                                 alt="uploader__cloud">
+                            <img class="uploader__arrow lazy"
+                                 src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                 data-src="./media/cloud_arrow.svg"
+                                 alt="uploader__arrow lazy">
+                            <img class="uploader__done lazy"
+                                 src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                 data-src="./media/cloud_done.svg"
+                                 alt="uploader__done">
+                        </div>
+
+                        <span class="uploader__text"
+                              id="messages">Загрузите научную работу</span>
+                        <span class="input-wrapper__error"></span>
+                        <span class="uploader__text" id="status"></span>
+
+                        <span id="file-upload-btn" class="button button--upload">
+                                Загрузить статью (.pdf .doc .docx)
+                            </span>
+                    </label>
+                </div>
+                <p class="audit__desc">
+                    Проведем бесплатный технический аудит, чтобы оценить возможность
+                    публикации Вашей рукописи в
+                    журнале с необходимыми
+                    характеристиками, а также сформировать перечень требующихся
+                    доработок и рассчитать их стоимость
+                </p>
+                <div class="audit__fields">
+                    <div class="audit__inputs">
+                        <div class="input-wrapper">
+                            <input class="audit-form__input" type="email" name="email"
+                                   placeholder="Email куда направить результат"
+                                   pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                                   required>
+                            <span class="input-wrapper__error"></span>
+                        </div>
+                    </div>
+
+                    <div class="audit__btns">
+                        <div class="audit__submit">
+                            <span class="input-wrapper__error"></span>
+                            <button type="submit" id="fileUploadBtn"
+                                    class="button audit__btn" name="submit"
+                                    data-show-popup="finished" data-formsended="free_audit_"
+                                    data-step="1">
+                                Отправить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="audit__carousel audit-carousel">
+            <div class="audit-carousel__item">
+                <div class="audit-carousel__inner audit-cart">
+                    <div class="audit-cart__inner">
+                        <h3 class="audit-cart__title">Технический аудит</h3>
+                        <p class="audit-cart__text">
+                            Заранее определим необходимые доработки
+                            и их последовательность для
+                            успешной публикации Вашей рукописи
+                        </p>
+                        <button class="audit-cart__link"
+                                data-show-popup="200">Открыть пример
+                        </button>
+                    </div>
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/human_a.svg" alt="human_a"
+                         class="audit-cart__img lazy">
+                </div>
+            </div>
+
+            <div class="audit-carousel__item">
+                <div class="audit-carousel__inner audit-cart">
+                    <div class="audit-cart__inner">
+                        <h3 class="audit-cart__title">Предварительная экспертная
+                            оценка</h3>
+                        <p class="audit-cart__text">
+                            Проверим научную составляющую и получим ценные рекомендации
+                            от
+                            действующего рецензента авторитетного журнала по Вашей
+                            тематике
+                        </p>
+                        <button class="audit-cart__link"
+                                data-show-popup="202">Открыть пример
+                        </button>
+                    </div>
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/audit/humaaans-2.svg" alt="human_a"
+                         class="audit-cart__img lazy">
+                </div>
+            </div>
+
+            <div class="audit-carousel__item">
+                <div class="audit-carousel__inner audit-cart">
+                    <div class="audit-cart__inner">
+                        <h3 class="audit-cart__title">До / После</h3>
+                        <p class="audit-cart__text">
+                            Мы вкладываем 80% бюджета в доработку статьи, состоящую из
+                            11
+                            этапов. Посмотрите, как изменится Ваша статья перед
+                            отправкой в
+                            журнал
+                        </p>
+                        <button class="audit-cart__link" data-show-popup="206">
+                            Открыть пример
+                        </button>
+                    </div>
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/audit/humaaans-3.svg" alt="human_a"
+                         class="audit-cart__img lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

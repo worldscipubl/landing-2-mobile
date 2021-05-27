@@ -1,0 +1,79 @@
+.component {
+  @include margin(120px);
+
+  &__img {
+    position: absolute;
+    object-fit: cover;
+    object-position: top center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__col{
+    position: relative;
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    color: $textColorSecondary;
+    @include font-size(24px);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    padding-top: 33px;
+    padding-bottom: 56px;
+    background-color: #001437;
+  }
+
+  &__inner {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  &__text {
+    @include font-size(14px);
+    color: $textColorSecondary;
+
+    & + & {
+      padding-top: 24px;
+    }
+  }
+}
+
+.quote {
+  display: flex;
+  flex-direction: row;
+  @include margin(36px, 0px, 36px, 0px);
+  height: 100%;
+
+  &__text {
+    align-items: center;
+    font-style: italic;
+    color: #000000;
+    @include font-size(12px);
+  }
+
+  &::before {
+    content: "“";
+    transform: translateY(100%);
+  }
+
+  &::after {
+    content: "“";
+    transform: rotateZ(180deg) translateX(110%) translateY(-110%);
+  }
+
+  &::before, &::after {
+    height: 10px;
+    line-height: 0%;
+    font-family: $fontFamilyPrimary;
+    color: #000000;
+    @include font-size(52px);
+  }
+}

@@ -1,0 +1,127 @@
+.footer {
+  position: relative;
+  @include margin(120px);
+  @include padding(16px, 0px, 46px, 0px);
+  background: #001437;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__about {
+    width: 75%;
+
+    &-text {
+      font-family: $fontFamilyPrimary;
+      font-style: italic;
+      text-align: center;
+      @include font-size(12px);
+      color: $textColorSecondary;
+
+      &:not(:first-child) {
+        @include padding(18px);
+      }
+
+      &--link {
+        display: block;
+        margin: 0 auto;
+        text-decoration: underline;
+        text-align: center;
+      }
+    }
+
+  }
+
+  &__logo {
+    object-fit: contain;
+    height: 100%;
+    margin: auto;
+
+  }
+
+  &__social {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    height: 100%;
+  }
+}
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  &__tel {
+    font-family: $fontFamilyPrimary;
+    @include font-size(12px);
+    color: $textColorSecondary;
+  }
+
+  &__address {
+    font-family: $fontFamilyPrimary;
+    @include font-size(12px);
+    color: $textColorSecondary;
+  }
+}
+
+.social {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  width: 68%;
+
+  &__link {
+    display: block;
+    padding: 4px;
+    width: 15%;
+  }
+
+  &__copy {
+    font-family: $fontFamilyPrimary;
+    @include font-size(9px);
+    @include margin(8px);
+    color: $textColorPrimary;
+    text-align: center;
+
+    @include _more-than(1220px) {
+      font-size: #{get-vw(10px, 1220px)};
+    }
+  }
+
+  &__web {
+    margin: 0.8vh auto;
+
+    @include _more-than(1220px) {
+      font-size: #{get-vw(12px, 1220px)};
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    border-radius: 6px;
+    overflow: hidden;
+
+    display: block;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+}

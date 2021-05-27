@@ -1,0 +1,22 @@
+(function () {
+    const _carousel = document.querySelector('.stages-carousel');
+    const _title = document.querySelector('.stages__carousel-counter');
+    const flkty = new Flickity(_carousel, {
+        // options
+        cellAlign: 'left',
+        prevNextButtons: true,
+        // contain: true,
+        // setGallerySize: false,
+        // autoPlay: 5000,
+        contain: false,
+        on: {
+            change: function (index) {
+                index++;
+                const slidesLength = this.slides.length;
+                _title.innerHTML = (index + '/' + slidesLength);
+            }
+        }
+    });
+
+    _title.innerHTML = ('1/' + flkty.slides.length);
+})();

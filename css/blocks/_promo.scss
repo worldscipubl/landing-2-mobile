@@ -1,0 +1,232 @@
+.promo {
+  @include margin(82px);
+
+  &__inner {
+    overflow: hidden;
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    text-align: left;
+    @include font-size(24px);
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include margin(30px);
+    overflow: hidden;
+  }
+
+  &__carousel {
+    @include margin(23px);
+  }
+
+  &__footer {
+    width: 100%;
+    background: #001437;
+    text-align: center;
+    @include padding(36px, 0px, 36px, 0px);
+    margin-top: 130px;
+  }
+
+  &__form {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  &__contract {
+
+  }
+}
+
+.promo-carousel {
+  height: 280px;
+  @include _more-than($bp-xxl-375) {
+    height: #{get-vw(280px, $bp-xxl-375)};
+  }
+  width: 100%;
+
+
+  &__item {
+    width: 94%;
+    height: 100%;
+
+    @include padding(0px, 5px, 10px, 5px);
+  }
+
+  &__inner {
+    height: 100%;
+  }
+
+  .flickity-page-dots {
+    bottom: -12px;
+
+    @media (min-width: $bp-xxl-375) {
+      bottom: #{get-vw(-12px, $bp-xxl-375)};
+    }
+  }
+
+  .flickity-page-dots .dot {
+    width: 8px;
+    height: 8px;
+    opacity: .3;
+    background: #C4C4C4;
+  }
+
+  .flickity-page-dots .dot.is-selected {
+    opacity: 1;
+  }
+
+}
+
+.manifest {
+  position: relative;
+  background: $popupBackground;
+  @extend %s-border;
+  @include padding(31px, 30px, 73px, 14px);
+
+  &--logo {
+    @include padding(24px, 35px, 60px, 28px);
+  }
+
+  &__logo {
+    position: absolute;
+    right: 2.8%;
+    top: 0;
+    object-fit: contain;
+
+    $h-logo: 56px;
+    height: $h-logo;
+
+    @include _more-than($bp-xxl-375) {
+      height: #{get-vw($h-logo, $bp-xxl-375)};
+    }
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(14px);
+    padding-right: 4vw;
+    line-height: 110%;
+  }
+
+  &__text {
+    font-family: $fontFamilyPrimary;
+    @include font-size(14px);
+    line-height: 110%;
+
+    &:not(:first-child) {
+      @include padding(18px);
+    }
+
+    &--green {
+      font-family: $fontFamilyPrimary;
+      @include font-size(14px);
+      color: $colorAccent;
+    }
+  }
+}
+
+.trailer {
+  &__video-block {
+    width: 100%;
+    @include padding(0px, 5px, 0px, 5px);
+  }
+
+  &__video {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      width: inherit;
+      height: 100%;
+
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 6px;
+    }
+  }
+
+  &__description {
+    @include font-size(12px);
+    @include margin(23px);
+  }
+}
+
+%tmp-input {
+  $textColorInput: #B7B7B7;
+  $borderColorInput: rgba(0, 0, 0, 0.3);
+
+
+  background: $popupBackground;
+  color: $textColorPrimary;
+
+  &::placeholder {
+    color: $textColorInput;
+  }
+
+  text-align: center;
+
+  @include font-size(12px);
+  padding: 10px 20px 10px 20px;
+
+  border: 1px solid $borderColorInput;
+  border-radius: 6px;
+
+  @media (min-width: $bp-xxl-375) {
+    border: #{get-vw(1px, $bp-xxl-375)} solid $borderColorInput;
+    border-radius: #{get-vw(6px, $bp-xxl-375)};
+  }
+}
+
+.app-form {
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(16px);
+  }
+
+  &__inner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 309fr 177fr;
+    @include margin(10px);
+
+    column-gap: 16px;
+
+    @include _more-than($bp-xxl-375) {
+      column-gap: #{get-vw(16px, $bp-xxl-375)};
+    }
+  }
+
+  &__input {
+    @extend %tmp-input;
+    cursor: text;
+  }
+
+  &__submit {
+  }
+
+  &__note {
+    @include font-size(9px);
+    @include margin(10px);
+    max-width: 90%;
+    line-height: 105%;
+
+    color: #BBBBBB;
+
+    &--link {
+      @include margin(4px);
+      text-decoration: underline;
+    }
+  }
+}

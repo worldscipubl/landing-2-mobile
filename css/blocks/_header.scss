@@ -1,0 +1,149 @@
+@import "nav";
+
+.header {
+  z-index: $z-index-menu;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $windowBackground;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  @include _more-than($bp-xxl-375) {
+    padding-top: #{get-vw(8px, $bp-xxl-375)};
+    padding-bottom: #{get-vw(8px, $bp-xxl-375)};
+  }
+
+  &__call {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+
+
+    &:hover {
+      color: $textColorSecondary;
+      opacity: .8;
+    }
+
+    &:active {
+      color: $textColorSecondary;
+      opacity: .8;
+    }
+
+  }
+
+  &__call-text {
+    font-family: $fontFamilyPrimary;
+    color: #000000;
+    @include font-size(10px);
+    text-align: center;
+    line-height: 116.6666%;
+  }
+
+  &__logo {
+    object-fit: contain;
+    object-position: center;
+    width: 50px;
+    margin-left: 18px;
+    @include _more-than($bp-xxl-375) {
+      margin-left: #{get-vw(18px, $bp-xxl-375)};
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #000000;
+
+  &__burger {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    cursor: pointer;
+    z-index: $z-index-menu;
+  }
+
+  &__title {
+    display: block;
+    text-transform: capitalize;
+    color: inherit;
+    @include font-size(12px);
+    @include margin(0px, 0px, 0px, 9px);
+
+    &--show {
+      display: none;
+    }
+  }
+}
+
+.burger {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  @include margin(15px, 0px, 15px, 0px);
+
+  width: 30px;
+  height: 2px;
+  background-color: #000000;
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    margin-top: 7px;
+    width: 30px;
+    height: 2px;
+    background-color: #000000;
+    border: none;
+    transition: transform 0.2s, background-color 0.4s;
+  }
+
+  &:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    margin-top: -7px;
+    width: 30px;
+    height: 2px;
+    background-color: #000000;
+    border: none;
+    transition: transform 0.2s, background-color 0.4s;
+  }
+
+  &-active:after {
+    background-color: #FFFFFF;
+    transform: rotate(-45deg);
+    margin-top: 0;
+  }
+
+  &-active {
+    height: 0;
+  }
+
+  &-active:before {
+    background-color: #FFFFFF;
+    transform: rotate(45deg);
+    margin-top: 0;
+  }
+}
+

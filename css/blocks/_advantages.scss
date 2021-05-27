@@ -1,0 +1,63 @@
+.advantages {
+  @include margin(30px);
+
+  &__item {
+    width: 64%;
+    height: 100%;
+    @include padding(10px, 10px, 10px, 10px);
+  }
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.advantages-carousel {
+
+  height: 212px;
+  @include _more-than($bp-xxl-375) {
+    height: #{get-vw(212px, $bp-xxl-375)};
+  }
+
+  .flickity-page-dots {
+    bottom: -12px;
+
+    @media (min-width: $bp-xxl-375) {
+      bottom: #{get-vw(-12px, $bp-xxl-375)};
+    }
+  }
+
+  .flickity-page-dots .dot {
+    width: 8px;
+    height: 8px;
+    opacity: .3;
+    background: #C4C4C4;
+  }
+
+  .flickity-page-dots .dot.is-selected {
+    opacity: 1;
+  }
+}
+
+.feature-card {
+  background: $popupBackground;
+  @extend %s-border;
+  padding: 20px 15px 30px 15px;
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    color: $textColorAccent;
+    @include font-size(36px);
+  }
+
+  &__text {
+    color: $textColorAccent;
+    @include font-size(12px);
+    margin-top: 4px;
+
+    @include _more-than($bp-xxl-375) {
+      margin-top: #{get-vw(4px, $bp-xxl-375)};
+    }
+  }
+}

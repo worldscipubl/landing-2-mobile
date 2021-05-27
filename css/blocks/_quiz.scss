@@ -1,0 +1,98 @@
+.quiz {
+  @include margin(134px);
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(24px);
+  }
+
+  &__subtitle {
+    font-family: $fontFamilySecondary;
+    color: $textColorSecondary;
+
+    @include font-size(14px);
+    @include padding(8px, 20px, 8px, 10px);
+  }
+
+  &__main {
+    transform: translateY(-46px);
+
+    @include _more-than($bp-xxl-375) {
+      transform: translateY(#{get-vw(-46px, $bp-xxl-375)});
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    background: $popupBackground;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+
+    @include _more-than($bp-xxl-375) {
+      border-radius: #{get-vw(6px, $bp-xxl-375)};
+    }
+  }
+
+  &__header {
+    width: 100%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: $subtitleBackground;
+  }
+
+  &__content {
+    @include padding(18px, 12px, 18px, 12px);
+  }
+
+  &__poster {
+    width: 100%;
+    position: relative;
+    @include margin(30px);
+
+    height: 455px;
+    @include _more-than($bp-xxl-375) {
+      height: #{get-vw(455px, $bp-xxl-375)};
+    }
+  }
+
+  &__button-next {
+    margin-top: 20px;
+  }
+}
+
+.img-frame {
+  &__img {
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+  }
+
+  &__labels {
+    @include padding(0px, 24px, 12px, 24px);
+    @include font-size(10px);
+    width: 100%;
+
+    position: absolute;
+    bottom: 46px;
+    right: 0;
+    text-align: right;
+
+    @include _more-than($bp-xxl-375) {
+      bottom: #{get-vw(46px, $bp-xxl-375)};
+    }
+  }
+
+
+  &__label {
+    font-family: Helvetica;
+    font-style: italic;
+    @include font-size(12px);
+    color: #FFFFFF;
+    display: block;
+  }
+}

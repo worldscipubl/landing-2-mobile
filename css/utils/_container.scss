@@ -1,0 +1,12 @@
+$p-side: 24px;
+
+.container {
+  margin: 0 auto;
+  padding-left: $p-side;
+  padding-right: $p-side;
+
+  @include _more-than($bp-xxl-375) {
+    padding-left: #{get-vw($p-side, $bp-xxl-375)};
+    padding-right: #{get-vw($p-side, $bp-xxl-375)};
+  }
+}

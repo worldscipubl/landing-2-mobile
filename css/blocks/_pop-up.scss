@@ -1,0 +1,933 @@
+.pop-up {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #fff;
+  z-index: 100;
+  transform: translateY(-100%);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  &__form {
+    width: 100%;
+  }
+
+  &__header {
+    width: 82%;
+    margin: 0 auto;
+  }
+
+  &_transition {
+    transition: transform 0.5s;
+  }
+
+  &_active {
+    transform: translateY(0);
+  }
+
+  &__poster {
+    position: relative;
+    height: 45%;
+    background-color: #F5F5F5;
+
+    &--white {
+      background: $popupBackground;
+      @extend %s-border;
+    }
+  }
+
+  &__labels {
+    @include padding-size(0px, 12px, 12px, 12px);
+    @include font-size(10px);
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    &--sign {
+      top: 2.5%;
+      bottom: auto;
+      left: 2.5%;
+    }
+  }
+
+  &__label {
+    font-family: $fontFamilyPrimary;
+    @include font-size(10px);
+
+    color: #FFFFFF;
+
+    display: block;
+
+    &--black {
+      color: $textColorAccent;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: contain;
+
+    $h-logo: 80px;
+    height: $h-logo;
+
+    &--right {
+      left: auto;
+      right: 0;
+    }
+
+
+    @include _more-than($bp-xxl-375) {
+      height: #{get-vw($h-logo, $bp-xxl-375)};
+    }
+  }
+
+  &__human {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    object-fit: contain;
+    height: 30%;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__main {
+    height: 55%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &--full {
+      height: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  &__inner {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-start;
+    @include padding(0px, 12px, 12px, 12px);
+  }
+
+  &__extended-block {
+    flex: 1;
+  }
+
+  &__desc {
+    font-family: $fontFamilyPrimary;
+    @include font-size(14px);
+    display: block;
+    width: 84%;
+
+    color: #000000;
+    margin-top: 2vh;
+  }
+
+  &__input {
+    width: 100%;
+    font-weight: normal;
+    cursor: text;
+    margin-top: 2vh;
+    @include font-size(12px);
+    @include padding(10px, 16px, 10px, 16px);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.49);
+
+    &--file {
+      cursor: pointer;
+    }
+  }
+
+  &__button {
+    display: block;
+    border: 1px solid #000000;
+    border-radius: 300px;
+    background-color: #fff;
+    @include padding(10px, 16px, 10px, 16px);
+    transition: 0.3s;
+    cursor: pointer;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    @include font-size(14px);
+    width: 100%;
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
+  }
+
+  &__super-desc {
+    font-weight: normal;
+    //@include margin(8px);
+    @include font-size(8px);
+    color: #BBBBBB;
+    text-align: left;
+
+    &--link {
+      margin: 0;
+      text-decoration: underline;
+    }
+
+    &--finish {
+      position: absolute;
+      bottom: 2.5%;
+      left: 50%;
+      @include font-size(14px);
+      transform: translateX(-50%);
+      margin: 0;
+      text-decoration: none;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    @include font-size(14px);
+    @include margin(12px);
+    line-height: 120%;
+
+    color: #000000;
+  }
+
+  &__video {
+    width: 100%;
+    @include margin(90px, 0px, 42px, 0px);
+  }
+
+  &__social {
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    .social__link {
+    }
+  }
+
+  &__iframe {
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+    position: relative;
+
+    & iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      width: inherit;
+      height: 100%;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    right: 2vw;
+    top: 2vh;
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__file {
+    margin-top: 2vh;
+  }
+
+}
+
+.popup-2 {
+  &__promo {
+    font-family: $fontFamilySecondary;
+    @include font-size(24px);
+    @include padding(24px, 24px, 24px, 24px);
+    background: #ECECEC;
+    border-radius: 6px;
+  }
+
+  &__description {
+    font-family: $fontFamilySecondary;
+    font-size: 14px;
+    text-align: left;
+    cursor: default;
+  }
+
+  &__form {
+    width: 100%;
+  }
+}
+
+.popup-3 {
+  &__promo {
+    font-family: $fontFamilySecondary;
+    @include font-size(24px);
+    @include padding(24px, 24px, 24px, 24px);
+    background: #ECECEC;
+    border-radius: 6px;
+  }
+
+  &__description {
+    font-family: $fontFamilyPrimary;
+    font-size: 24px;
+    padding-right: 100px;
+
+    @include _more-than($bp-xxl-375) {
+      padding-right: #{get-vw(140px, $bp-xxl-375)};
+      font-size: #{get-vw(24px, $bp-xxl-375)};
+    }
+
+    @include margin(20px);
+    text-align: left;
+  }
+
+  &__form {
+    width: 100%;
+
+    input[type="file"] {
+      display: none;
+    }
+  }
+}
+
+.p-uploader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  @include padding(12px, 12px, 12px, 12px);
+  color: rgba(183, 183, 183, 1);
+
+  &--active {
+    background-color: $colorAccent;
+    border: 1px solid $colorAccent;
+
+    .p-uploader__choose {
+      color: #FFFEFE;
+
+      &:hover {
+        color: #B7B7B7;
+      }
+    }
+
+  }
+
+  &:active {
+    background-color: #0F5C30;
+  }
+
+  &:hover {
+    color: rgba(32, 32, 32, 1);
+  }
+
+  &__choose {
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+
+      .p-uploader__text {
+        color: rgba(32, 32, 32, 1);
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    object-fit: contain;
+    width: 8%;
+  }
+
+  &__text {
+    display: block;
+    text-align: left;
+    font-style: $fontFamilyPrimary;
+    color: #B7B7B7;
+    @include font-size(12px);
+  }
+}
+
+.card-file {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  @include padding(18px, 4px, 18px, 4px);
+  margin: 2vh auto;
+  cursor: default;
+  max-width: 80%;
+
+  @include _less-than-height(521px) {
+    display: none;
+  }
+
+  &--pdf {
+    width: 80%;
+    height: auto;
+  }
+
+  background: #F5F5F5;
+  @extend %s-border;
+
+  &__img {
+    width: 40%;
+    object-fit: contain;
+    object-position: center;
+
+    &--pdf {
+      width: 18%;
+    }
+
+    &--logo {
+      width: 60%;
+    }
+  }
+
+  &__title {
+    font-family: $fontFamilyPrimary;
+    @include font-size(12px);
+    @include padding(12px, 12px, 0px, 12px);
+    line-height: 110%;
+    text-align: center;
+    margin-bottom: 2vh;
+    color: $textColorPrimary;
+  }
+}
+
+.popup-4 {
+}
+
+.popup-7 {
+}
+
+.pdf-reader {
+  display: flex;
+  flex-direction: column;
+
+  &__column {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 1vh;
+  }
+
+  &__header {
+    position: relative;
+    flex: 50;
+    width: 100%;
+    background-color: $popupBackground;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  &__title {
+    font-size: 14px;
+    text-align: left;
+    width: 80%;
+    padding: 1vh;
+  }
+
+  &__viewer {
+    flex: 508;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__footer {
+    flex: 60;
+    width: 100%;
+    background-color: $popupBackground;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
+  &__iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__close {
+    position: absolute;
+    top: 25%;
+    right: 0;
+  }
+
+  &__btn {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-radius: 300px;
+    background-color: #fff;
+    @include padding(12px, 50px, 12px, 50px);
+    @include font-size(14px);
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
+  }
+}
+
+.pdf-download {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    text-align: center;
+    align-self: center;
+    @include font-size(14px);
+  }
+
+  &__img {
+    height: 10%;
+    @include padding(0px, 12px, 0px, 12px);
+  }
+}
+
+.selector {
+  position: relative;
+  width: 100%;
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFEFE;
+    @include margin(12px);
+
+    color: rgba(183, 183, 183, 1);
+    font-style: $fontFamilyPrimary;
+    @include font-size(12px);
+    @include padding(12px, 12px, 12px, 12px);
+    border: 1px solid rgba(0, 0, 0, 0.49);
+    border-radius: 6px;
+    z-index: $z-index-menu;
+
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(32, 32, 32, 1);
+    }
+
+    &--show {
+      border: 1px solid $colorAccent;
+      background-color: $colorAccent;
+      color: #FFFEFE;
+
+      &:hover {
+        color: #FFFEFE;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: calc(100% - 6px);
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    background-color: #ffffff;
+
+    border: 1px solid #c7ccd1;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    @media (min-width: $bp-xxl-375) {
+      border-bottom-left-radius: #{get-vw(5px, $bp-xxl-375)};
+      border-bottom-right-radius: #{get-vw(5px, $bp-xxl-375)};
+    }
+
+    transition: all 0.3s ease-out;
+
+    opacity: 0;
+    z-index: $z-index-content;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + label {
+      background-color: $colorAccent;
+      overflow: hidden;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    max-height: 0;
+    padding: 0 12px;
+
+    font-style: $fontFamilyPrimary;
+    @include font-size(12px);
+
+    transition: all 0.2s ease-out;
+    background-color: rgba(236, 236, 236, 1);
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    & + input + & {
+      border-top: 0 solid #C7CCD160;
+    }
+
+    &:hover {
+      background-color: rgba(206, 206, 206, 1);
+    }
+
+    &:active {
+      background-color: $colorAccent;
+    }
+  }
+
+  &[data-state="active"] {
+    .selector__title {
+      &::before {
+        transform: translate(-3px, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translate(3px, -50%) rotate(45deg);
+      }
+    }
+
+    .selector__content {
+      opacity: 1;
+    }
+
+    .selector__label + .selector__input + .selector__label {
+      max-height: 40px;
+      border-top-width: 1px;
+    }
+  }
+}
+
+.parea {
+  height: 100%;
+  width: 100%;
+  margin-top: 8vh;
+
+  &__header {
+    flex: 1;
+  }
+
+  &__body {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+  }
+
+  &__footer {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__logo {
+    position: absolute;
+    object-fit: contain;
+    height: 18%;
+    right: 2%;
+    top: 8%;
+  }
+
+  &__title {
+    position: relative;
+    font-family: $fontFamilyPrimary;
+    color: $textColorSecondary;
+    @include font-size(14px);
+    line-height: 116%;
+    background-color: $colorPrimary;
+    @include padding(26px, 18px, 18px, 18px);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    @media (min-width: $bp-xxl-375) {
+      border-bottom-left-radius: #{get-vw(6px, $bp-xxl-375)};
+      border-bottom-right-radius: #{get-vw(6px, $bp-xxl-375)};
+    }
+
+    &--pink {
+      font-family: $fontFamilyPrimary;
+      background-color: #F595A8;
+    }
+  }
+
+  &__subtitle {
+    width: 80%;
+    font-family: $fontFamilySecondary;
+    color: $textColorPrimary;
+    @include font-size(18px);
+    line-height: 116%;
+  }
+
+  &__text {
+    font-family: $fontFamilyPrimary;
+    color: $textColorPrimary;
+    @include font-size(14px);
+    margin-top: 2vh;
+  }
+
+  &__btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include font-size(14px);
+    @include padding(10px, 10px, 10px, 10px);
+    margin-top: 2vh;
+  }
+}
+
+.cover {
+  flex-direction: row;
+
+  &__cal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &--center {
+      justify-content: center;
+      background: #F5F5F5;
+    }
+
+    &--white {
+      background: $popupBackground;
+      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 6px;
+      z-index: 100000;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include font-size(18px);
+    @include padding(15px, 10px, 15px, 10px);
+    @include margin(35px);
+
+    @include _more-than(720px) {
+      padding: #{get-vw(15px, 720px)} #{get-vw(10px, 720px)};
+      margin-top: #{get-vw(35px, 720px)};
+      font-size: #{get-vw(16px, 720px)};
+    }
+
+    @include _more-than(1220px) {
+      padding: #{get-vw(15px, 1220px)} #{get-vw(10px, 1220px)};
+      margin-top: #{get-vw(35px, 1220px)};
+      font-size: #{get-vw(16px, 1220px)};
+    }
+
+
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    background-color: $colorPrimary;
+
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    @media (min-width: $bp-xxl-375) {
+      border-bottom-left-radius: #{get-vw(6px, $bp-xxl-375)};
+      border-bottom-right-radius: #{get-vw(6px, $bp-xxl-375)};
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 4;
+    width: 80%;
+  }
+
+  &__footer {
+    width: 70%;
+    @include margin(0px, 0px, 20px, 0px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__logo {
+    object-fit: contain;
+    object-position: center;
+    height: 50%;
+    width: 80%;
+  }
+
+  &__subtitle {
+    font-family: $fontFamilySecondary;
+    color: $textColorPrimary;
+    @include font-size(36px);
+
+    @include _more-than(720px) {
+      font-size: #{get-vw(28px, 720px)};
+    }
+
+    @include _more-than(1220px) {
+      font-size: #{get-vw(28px, 1220px)};
+    }
+
+    line-height: 116%;
+  }
+
+  &__text {
+    font-family: $fontFamilyPrimary;
+    color: $textColorPrimary;
+    @include font-size(24px);
+    @include margin(24px);
+
+    @include _more-than(720px) {
+      font-size: #{get-vw(18px, 720px)};
+    }
+
+    @include _more-than(1220px) {
+      font-size: #{get-vw(18px, 1220px)};
+    }
+  }
+}
+
+.pop-up-cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: none;
+
+  &__main {
+    height: 100%;
+  }
+
+  //  TODO: PROPD_COVER
+  @include _more-than(720px) {
+    display: flex;
+    z-index: 99999;
+  }
+}
+
+.folder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 28%;
+
+  &__img {
+    object-position: center;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    color: $textColorPrimary;
+    @include font-size(18px);
+    @include margin(12px);
+    line-height: 116%;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 83%;
+
+  &__img {
+    object-position: center;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    font-family: $fontFamilyPrimary;
+    color: $textColorPrimary;
+    @include font-size(14px);
+    @include margin(12px);
+    line-height: 116%;
+    text-align: center;
+    width: 100%;
+  }
+}

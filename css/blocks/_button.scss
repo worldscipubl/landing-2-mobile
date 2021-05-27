@@ -1,0 +1,124 @@
+%btn-white {
+  background: transparent;
+  color: $textColorPrimary;
+}
+
+%btn-green {
+  color: $textColorSecondary;
+  background: $colorAccent;
+}
+
+
+.button {
+  font-family: $fontFamilySecondary;
+  @extend %btn-green;
+  box-shadow: 1px 1px 4px $colorShadow;
+  border-radius: 24px;
+
+  &:hover {
+    border-color: transparent;
+    color: $textColorSecondary;
+    background: #177840;
+  }
+
+  &:active {
+    border-color: transparent;
+    color: $textColorSecondary;
+    background: #0F5C30;
+  }
+
+  @include font-size(14px);
+  line-height: 116%;
+  text-align: center;
+  padding: 8px;
+
+  @include _more-than($bp-xxl-375) {
+    box-shadow: #{get-vw(1px, $bp-xxl-375)} #{get-vw(1px, $bp-xxl-375)} #{get-vw(4px, $bp-xxl-375)} $colorShadow;
+    border-radius: #{get-vw(24px, $bp-xxl-375)};
+  }
+
+  &--submit {
+    height: fit-content;
+    font-family: $fontFamilyPrimary;
+    @include font-size(14px);
+  }
+
+  &--contract {
+    width: 80%;
+    background: $textColorSecondary;
+    color: $textColorPrimary;
+    @extend %btn-white;
+    @include font-size(16px);
+    @include padding(16px, 16px, 16px, 16px);
+    line-height: 116.666667%;
+    border-radius: 6px;
+    font-family: $fontFamilyPrimary;
+
+    @include _more-than($bp-xxl-375) {
+      border-radius: #{get-vw(6px, $bp-xxl-375)};
+    }
+
+    @include _more-than($bp-lg-979) {
+      border-radius: #{get-vw(6px, $bp-lg-979)};
+    }
+  }
+
+  &--consultation {
+    background: transparent;
+    color: $textColorSecondary;
+    font-family: $fontFamilyPrimary;
+    @include padding(10px, 24px, 10px, 24px);
+    @include font-size(14px);
+
+    border: 1px solid $textColorSecondary;
+    box-shadow: 1px 1px 4px $colorShadow;
+    border-radius: 34px;
+
+    @include _more-than($bp-xxl-375) {
+      border-radius: #{get-vw(34px, $bp-xxl-375)};
+    }
+  }
+
+  &--upload {
+    font-size: 12px;
+    @include padding(6px, 12px, 6px, 12px);
+    background: #001437;
+  }
+}
+
+.button-quiz {
+  @extend %btn-green;
+
+  &:hover {
+    border-color: transparent;
+    color: $textColorSecondary;
+    background: #177840;
+  }
+
+  &:active {
+    border-color: transparent;
+    color: $textColorSecondary;
+    background: #0F5C30;
+  }
+
+  background: $textColorSecondary;
+  color: $textColorPrimary;
+
+  font-family: $fontFamilySecondary;
+  line-height: 100%;
+  text-align: center;
+
+  border: 1px solid rgba(51, 51, 51, 0.6);
+  box-shadow: 1px 1px 4px $colorShadow;
+  border-radius: 24px;
+  font-size: 12px;
+  padding: 11px;
+
+  @include _more-than($bp-xxl-375) {
+    border: #{get-vw(1px, $bp-xxl-375)} solid rgba(51, 51, 51, 0.6);
+    box-shadow: #{get-vw(1px, $bp-xxl-375)} #{get-vw(1px, $bp-xxl-375)} #{get-vw(4px, $bp-xxl-375)} $colorShadow;
+    border-radius: #{get-vw(24px, $bp-xxl-375)};
+    font-size: #{get-vw(12px, $bp-xxl-375)};
+    padding: #{get-vw(11px, $bp-xxl-375)};
+  }
+}

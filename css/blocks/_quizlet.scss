@@ -1,0 +1,32 @@
+.quizlet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  &__progress {
+  }
+
+  &__question {
+    @include font-size(14px);
+    @include margin(20px);
+    color: #000000;
+  }
+
+  &__answers {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__option {
+    width: 100%;
+
+    & + & {
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,263 @@
+.profile {
+  @include margin(134px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__wrap {
+    z-index: $z-index-content;
+  }
+
+  &__content {
+    width: 100%;
+    @include margin(30px);
+  }
+
+  &__sign {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 6vh;
+  }
+
+  &__background {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    height: 34%;
+  }
+
+  &__header {
+
+  }
+
+  &__subheader {
+    width: 100%;
+    @include padding(0px, 0px, 0px, 5px);
+  }
+
+  &__subtitle {
+    font-family: $fontFamilySecondary;
+    @include font-size(16px);
+    color: #FFFEFE;
+
+    background: $subtitleBackground;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+
+    @media (min-width: $bp-xxl-375) {
+      border-bottom-left-radius: #{get-vw(3px, $bp-xxl-375)};
+      border-top-left-radius: #{get-vw(3px, $bp-xxl-375)};
+    }
+
+    @include padding(14px, 18px, 14px, 18px);
+  }
+
+  &__footer {
+    @include padding(24px, 0px, 12px, 0px);
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    color: #000000;
+    @include font-size(24px);
+    @include padding(0px, 20px, 0px, 0px)
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__slider {
+    position: relative;
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 3px;
+    margin-top: 6px;
+  }
+
+  &__nav-slider {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.p-slider {
+  &__img-wrapper {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    border-radius: 6px;
+
+    @include _more-than($bp-xxl-375) {
+      border-radius: #{get-vw(6px, $bp-xxl-375)};
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 3px;
+
+    &--show {
+      display: block;
+    }
+  }
+}
+
+.p-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__column {
+
+  }
+
+  &__text {
+    font-family: $fontFamilyPrimary;
+    font-style: italic;
+    @include font-size(18px);
+    @include padding(0px, 80px, 0px, 0px);
+  }
+}
+
+.profile-carousel {
+  width: 100%;
+  height: 200px;
+  @include _more-than($bp-xxl-375) {
+    height: #{get-vw(200px, $bp-xxl-375)};
+  }
+
+  &__item {
+    width: 94%;
+    height: 100%;
+
+    @include padding(0px, 5px, 0px, 5px);
+    @include margin(5px, 0px, 5px, 0px);
+  }
+
+  &__inner {
+    height: 100%;
+  }
+
+  .flickity-page-dots {
+    bottom: -21px;
+
+    @media (min-width: $bp-xxl-375) {
+      bottom: #{get-vw(-21px, $bp-xxl-375)};
+    }
+  }
+
+  .flickity-page-dots .dot {
+    width: 8px;
+    height: 8px;
+    opacity: .3;
+    background: #C4C4C4;
+  }
+
+  .flickity-page-dots .dot.is-selected {
+    opacity: 1;
+  }
+
+}
+
+.accordion {
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: center;
+
+    width: 100%;
+    border-radius: 4px;
+    background: none;
+    cursor: pointer;
+
+    padding: 5px;
+
+    border: none;
+    text-align: left;
+    outline: none;
+
+    transition: 0.5s;
+
+    &--active, &:hover {
+      background-color: #E1F1FE;
+    }
+  }
+
+  &__item-title {
+    font-family: $fontFamilyPrimary;
+    @include font-size(10px);
+    @include margin(0px, 0px, 0px, 15px);
+  }
+
+  &__item-inner {
+    max-height: 0;
+    @include padding(0px, 0px, 0px, 10px);
+    @include margin(0px, 0px, 6px, 12px);
+    overflow: hidden;
+    border-left: 2px solid #E1F1FE;
+    transition: max-height 0.3s ease-out;
+
+    ol > li {
+      padding: 4px 0;
+      font-family: $fontFamilyPrimary;
+      @include font-size(10px);
+      color: #9B9B9B;
+    }
+  }
+
+  &__item-text {
+
+  }
+}
+
+.nav-hint {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 50%;
+
+  &__message {
+
+  }
+
+  &__img-block {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__human {
+    object-fit: contain;
+    object-position: right;
+    align-self: flex-end;
+    width: 50%;
+  }
+
+  &__arrow {
+    object-fit: contain;
+    object-position: top;
+  }
+
+  &__text {
+    font-family: $fontFamilyPrimary;
+    @include font-size(10px);
+    color: #000000;
+
+    background: #E1F1FE;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    @include padding(10px, 10px, 10px, 10px);
+  }
+}

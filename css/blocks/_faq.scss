@@ -1,0 +1,63 @@
+.faq {
+  @include margin(80px);
+
+  &__wrap {
+    position: relative;
+    z-index: $z-index-content;
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(24px);
+    text-align: left;
+  }
+
+  &__inner {
+  }
+
+  &__form {
+  }
+}
+
+.your-question {
+  display: flex;
+  flex-direction: column;
+
+  &__description {
+    font-family: $fontFamilyPrimary;
+    @include font-size(12px);
+    @include margin(36px);
+  }
+
+  &__textarea {
+    width: 100%;
+    text-align: left;
+    @include margin(20px);
+    @include padding(10px, 10px, 10px, 10px);
+    background-color: #FFFEFE;
+    border: 1px solid rgba(0, 0, 0, 0.49);
+
+    border-radius: 6px;
+    min-height: 93px;
+  }
+
+  &__email {
+    width: 80%;
+    @include padding(10px, 10px, 10px, 10px);
+    @include margin(20px);
+    background-color: #FFFEFE;
+
+    border: 1px solid rgba(0, 0, 0, 0.49);
+    border-radius: 6px;
+  }
+
+  &__submit {
+    background: $popupBackground;
+    border: 1px solid #000000;
+    color: #000000;
+    border-radius: 50px;
+
+    width: 80%;
+    @include margin(20px);
+  }
+}

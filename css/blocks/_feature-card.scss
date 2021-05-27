@@ -1,0 +1,29 @@
+.feature-card {
+  background: $popupBackground;
+  @extend %s-border;
+
+  padding: 30px 24px 30px 17px;
+
+  @include _more-than($bp-xxl-375) {
+    padding: #{get-vw(30px, $bp-xxl-375)}
+    #{get-vw(24px, $bp-xxl-375)}
+    #{get-vw(48px, $bp-xxl-375)}
+    #{get-vw(17px, $bp-xxl-375)};
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    color: $textColorAccent;
+    @include font-size(48px);
+  }
+
+  &__text {
+    color: $textColorAccent;
+    @include font-size(12px);
+    margin-top: 4px;
+
+    @include _more-than($bp-xxl-375) {
+      margin-top: #{get-vw(4px, $bp-xxl-375)};
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.cost {
+  position: relative;
+  overflow: hidden;
+  background-color: $popupBackground;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+
+  @include _more-than($bp-xxl-375) {
+    box-shadow: #{get-vw(1px, $bp-xxl-375)} #{get-vw(1px, $bp-xxl-375)} #{get-vw(2px, $bp-xxl-375)} rgba(0, 0, 0, 0.25);
+    border-radius: #{get-vw(3px, $bp-xxl-375)};
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    padding-top: 20px;
+    padding-bottom: 90px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(18px);
+    padding-right: 15px;
+
+    @include _more-than($bp-xxl-375) {
+      padding-right: #{get-vw(15px, $bp-xxl-375)};
+    }
+  }
+
+  &__text {
+    @include font-size(14px);
+    text-align: left;
+    margin-top: 27px;
+    padding-right: 15px;
+
+    @include _more-than($bp-xxl-375) {
+      margin-top: #{get-vw(27px, $bp-xxl-375)};
+      padding-right: #{get-vw(15px, $bp-xxl-375)};
+    }
+  }
+
+  &__btn {
+    width: 60%;
+    margin-top: 36px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include _more-than($bp-xxl-375) {
+      margin-top: #{get-vw(36px, $bp-xxl-375)};
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__bg-img {
+    position: absolute;
+    right: -6%;
+    bottom: 0;
+    height: 38%;
+    transform: scale(-1, 1);
+    object-fit: contain;
+    object-position: right;
+  }
+}

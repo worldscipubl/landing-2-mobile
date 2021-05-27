@@ -1,0 +1,260 @@
+.foreign {
+  @include margin(118px);
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    font-size: 24px;
+    color: #161616;
+    @include margin(0px, 0px, 30px, 0px);
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__column {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &--half {
+      width: 50%;
+
+      & + & {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    background: #001437;
+    text-align: center;
+    @include padding(36px, 0px, 36px, 0px);
+    margin-top: 160px;
+
+    &-title {
+      font-family: $fontFamilySecondary;
+      color: $textColorSecondary;
+      @include font-size(24px);
+    }
+
+    @include _more-than($bp-xxl-375) {
+      margin-top: #{get-vw(160px, $bp-xxl-375)};
+    }
+  }
+}
+
+.card-txt {
+  @extend %s-border;
+  background-color: $popupBackground;
+  @include padding(28px, 38px, 14px, 24px);
+  height: 46.77419%;
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    @include font-size(36px);
+    text-align: left;
+  }
+
+  &__text {
+    font-family: $fontFamilySecondary;
+    @include font-size(14px);
+    text-align: left;
+  }
+}
+
+.card-profile {
+  @extend %s-border;
+  height: 100%;
+  background-color: $popupBackground;
+
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include padding(10px, 8px, 10px, 8px);
+    border-bottom: 2px solid #EDEDED;
+  }
+
+
+  &__logo {
+    align-self: center;
+    width: 54%;
+
+    &-img {
+      width: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+
+      object-fit: cover;
+      object-position: center;
+
+      border: 5px solid #DEDEDE;
+      filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.4));
+    }
+  }
+
+  &__title {
+    @include margin(12px);
+    font-family: $fontFamilyPrimary;
+    @include font-size(14px);
+  }
+
+  &__about {
+  }
+
+  &__option {
+    font-family: $fontFamilyPrimary;
+    @include margin(12px);
+    @include font-size(12px);
+    @include padding(3px, 22px, 3px, 7px);
+    background: #E9E9E9;
+
+    &:not(:first-child) {
+      @include margin(10px);
+    }
+  }
+
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2vw 5vw;
+
+  }
+
+  &__rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__stars {
+    width: 50%;
+
+    &-img {
+      display: block;
+      height: 30%;
+      object-fit: contain;
+      text-align: left;
+    }
+  }
+
+  &__country {
+    font-family: $fontFamilyPrimary;
+    @include font-size(12px);
+  }
+
+  &__btn {
+    font-family: $fontFamilyPrimary;
+    @include font-size(14px);
+    @include padding(4px, 10px, 4px, 10px);
+    width: 80%;
+    align-self: center;
+  }
+}
+
+.card-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 46.77419%;
+  @extend %s-border;
+  background-color: $colorAccent;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    margin: auto 0;
+  }
+
+  &__title {
+    font-family: $fontFamilySecondary;
+    color: $textColorSecondary;
+    @include font-size(36px);
+  }
+
+  &__stars {
+    font-family: $fontFamilySecondary;
+    color: $textColorSecondary;
+
+    &-img {
+      display: block;
+      width: 50%;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    font-family: $fontFamilySecondary;
+    color: $textColorSecondary;
+    @include font-size(14px);
+    @include margin(12px);
+    text-transform: lowercase;
+  }
+
+  &--without {
+    background-color: #001437;
+
+    .card-rating__stars {
+      display: none;
+    }
+  }
+}
+
+.foreign-carousel {
+  width: 100%;
+  height: 280px;
+  @include _more-than($bp-xxl-375) {
+    height: #{get-vw(280px, $bp-xxl-375)};
+  }
+
+  &__item {
+    width: 100%;
+    height: 100%;
+
+    @include padding(0px, 5px, 10px, 5px);
+  }
+
+  &__inner {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &--half {
+      flex-direction: row;
+    }
+  }
+
+  .flickity-page-dots {
+    bottom: -12px;
+
+    @media (min-width: $bp-xxl-375) {
+      bottom: #{get-vw(-12px, $bp-xxl-375)};
+    }
+  }
+
+  .flickity-page-dots .dot {
+    width: 8px;
+    height: 8px;
+    opacity: .3;
+    background: #C4C4C4;
+  }
+
+  .flickity-page-dots .dot.is-selected {
+    opacity: 1;
+  }
+}

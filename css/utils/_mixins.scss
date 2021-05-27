@@ -1,0 +1,95 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype');
+  }
+}
+
+@mixin font-size($f-size: 12px) {
+  @include _more-than($bp-xxl-375) {
+    font-size: #{get-vw($f-size, $bp-xxl-375)};
+  }
+
+  font-size: $f-size;
+}
+
+%s-border {
+  box-shadow: 1px 1px 4px $colorShadow;
+  border-radius: 6px;
+
+  @media (min-width: $bp-xxl-375) {
+    border-radius: #{get-vw(6px, $bp-xxl-375)};
+    box-shadow: #{get-vw(1px, $bp-xxl-375)}
+    #{get-vw(1px, $bp-xxl-375)}
+    #{get-vw(4px, $bp-xxl-375)}
+    $colorShadow;
+  }
+}
+
+%s-border--manifest {
+  box-shadow: 1px 1px 4px $colorShadow;
+  border-radius: 6px;
+  border-left: #001437 solid 12px;
+
+  @media (min-width: $bp-xxl-375) {
+    border-radius: #{get-vw(6px, $bp-xxl-375)};
+    border-left: #001437 solid #{get-vw(12px, $bp-xxl-375)};
+
+    box-shadow: #{get-vw(1px, $bp-xxl-375)}
+    #{get-vw(1px, $bp-xxl-375)}
+    #{get-vw(4px, $bp-xxl-375)}
+    $colorShadow;
+  }
+}
+
+@mixin padding($top: 0px, $right: 0px, $bottom: 0px, $left: 0px) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+
+  @media (min-width: $bp-xxl-375) {
+    padding-top: #{get-vw($top, $bp-xxl-375)};
+    padding-right: #{get-vw($right, $bp-xxl-375)};
+    padding-bottom: #{get-vw($bottom, $bp-xxl-375)};
+    padding-left: #{get-vw($left, $bp-xxl-375)};
+  }
+}
+
+@mixin margin($t-margin: 0px, $r-margin: 0px, $b-margin: 0px, $l-margin: 0px) {
+  margin: $t-margin $r-margin $b-margin $l-margin;
+
+  @media (min-width: $bp-xxl-375) {
+    margin: #{get-vw($t-margin, $bp-xxl-375)}
+    #{get-vw($r-margin, $bp-xxl-375)}
+    #{get-vw($b-margin, $bp-xxl-375)}
+    #{get-vw($l-margin, $bp-xxl-375)};
+  }
+}
+
+@mixin padding-size($t-padding: 0px, $r-padding: 0px, $b-padding: 0px, $l-padding: 0px) {
+  padding: $t-padding $r-padding $b-padding $l-padding;
+
+  @media (min-width: $bp-xxl-375) {
+    padding: #{get-vw($t-padding, $bp-xxl-375)}
+    #{get-vw($r-padding, $bp-xxl-375)}
+    #{get-vw($b-padding, $bp-xxl-375)}
+    #{get-vw($l-padding, $bp-xxl-375)};
+  }
+}
+
+@mixin _more-than($resolution: 180px) {
+  @media (min-width: $resolution) {
+    @content;
+  }
+}
+
+@mixin _less-than-height($resolution: 180px) {
+  @media (max-height: $resolution) {
+    @content;
+  }
+}
