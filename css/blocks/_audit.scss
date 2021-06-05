@@ -1,6 +1,10 @@
 .audit {
   @include margin(134px);
 
+  &--without{
+    @include margin(60px);
+  }
+
   &__wrap {
   }
 

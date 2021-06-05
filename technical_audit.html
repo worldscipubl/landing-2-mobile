@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <base href="/landing_mobile/">
+    <link rel="preload" href="./fonts/HelveticaRegular/HelveticaRegular.woff" as="font"
+          type="font/woff"
+          crossorigin="anonymous">
+    <link rel="preload" href="./fonts/HelveticaBold/HelveticaBold.woff" as="font"
+          type="font/woff"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flickity.min.css">
+    <link href="./media/incons/favicon.ico" rel="shortcut icon">
+    <title>WorldSciPubl</title>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NF7Q6BJ');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- VK Pixel Code -->
+    <script type="text/javascript">
+        !(function () {
+            var t = document.createElement('script');
+            (t.type = 'text/javascript'),
+                (t.async = !0),
+                (t.src = 'https://vk.com/js/api/openapi.js?162'),
+                (t.onload = function () {
+                    VK.Retargeting.Init('VK-RTRG-837729-8F4Pd'),
+                        VK.Retargeting.Hit();
+                }),
+                document.head.appendChild(t);
+        })();
+    </script>
+    <!-- End VK Pixel Code -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        !(function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) :
+                    n.queue.push(arguments);
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s);
+        })(
+            window,
+            document,
+            'script',
+            'https://connect.facebook.net/en_US/fbevents.js'
+        );
+        fbq('init', '2365479983546227');
+        fbq('track', 'PageView');
+    </script>
+    <!-- End Facebook Pixel Code -->
+    <!-- Yandex.Metrika counter -->
+    <script>
+        var yaParams = {
+            ip: "<?=$_SERVER['REMOTE_ADDR'];?>",
+        };
+    </script>
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter50181778 = new Ya.Metrika2({
+                        id: 50181778,
+                        params: window.yaParams,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true,
+                    });
+                } catch (e) {
+                }
+            });
+
+            var n = d.getElementsByTagName('script')[0],
+                s = d.createElement('script'),
+                f = function () {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://mc.yandex.ru/metrika/tag.js';
+
+            if (w.opera == '[object Opera]') {
+                d.addEventListener('DOMContentLoaded', f, false);
+            } else {
+                f();
+            }
+        })(document, window, 'yandex_metrika_callbacks2');
+    </script>
+    <!-- /Yandex.Metrika counter -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125087961-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-125087961-1');
+    </script>
+    <!-- Start for Saving cookie -->
+    <script>
+        var utmCookie = {
+            cookieNamePrefix: '_uc_',
+            utmParams: [
+                'utm_source',
+                'utm_medium',
+                'utm_campaign',
+                'utm_term',
+                'utm_content',
+            ],
+            cookieExpiryDays: 365,
+            createCookie: function (c, d, e) {
+                if (e) {
+                    var b = new Date();
+                    b.setTime(b.getTime() + e * 24 * 60 * 60 * 1000);
+                    var a = '; expires=' + b.toGMTString();
+                } else {
+                    var a = '';
+                }
+                document.cookie =
+                    this.cookieNamePrefix + c + '=' + d + a + '; path=/';
+            },
+            readCookie: function (b) {
+                var e = this.cookieNamePrefix + b + '=';
+                var a = document.cookie.split(';');
+                for (var d = 0; d < a.length; d++) {
+                    var f = a[d];
+                    while (f.charAt(0) == ' ') {
+                        f = f.substring(1, f.length);
+                    }
+                    if (f.indexOf(e) == 0) {
+                        return f.substring(e.length, f.length);
+                    }
+                }
+                return null;
+            },
+            eraseCookie: function (a) {
+                this.createCookie(a, '', -1);
+            },
+            getParameterByName: function (b) {
+                b = b.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var a = '[\\?&]' + b + '=([^&#]*)';
+                var d = new RegExp(a);
+                var c = d.exec(window.location.search);
+                if (c == null) {
+                    return '';
+                } else {
+                    return decodeURIComponent(c[1].replace(/\+/g, ' '));
+                }
+            },
+            utmPresentInUrl: function () {
+                var d = false;
+                for (var a = 0; a < this.utmParams.length; a++) {
+                    var c = this.utmParams[a];
+                    var b = this.getParameterByName(c);
+                    if (b != '' && b != undefined) {
+                        d = true;
+                    }
+                }
+                return d;
+            },
+            writeUtmCookieFromParams: function () {
+                for (var a = 0; a < this.utmParams.length; a++) {
+                    var c = this.utmParams[a];
+                    var b = this.getParameterByName(c);
+                    this.createCookie(c, b, this.cookieExpiryDays);
+                }
+            },
+            writeCookieOnce: function (a, c) {
+                var b = this.readCookie(a);
+                if (!b) {
+                    this.createCookie(a, c, this.cookieExpiryDays);
+                }
+            },
+            writeReferrerOnce: function () {
+                value = document.referrer;
+                if (value === '' || value === undefined) {
+                    this.writeCookieOnce('referrer', 'direct');
+                } else {
+                    this.writeCookieOnce('referrer', value);
+                }
+            },
+            referrer: function () {
+                return this.readCookie('referrer');
+            },
+        };
+        utmCookie.writeReferrerOnce();
+        if (utmCookie.utmPresentInUrl()) {
+            utmCookie.writeUtmCookieFromParams();
+        }
+    </script>
+    <!-- End for saving cookie -->
+
+</head>
+
+<body>
+
+<header class="header container" id="header">
+
+    <div class="header__menu menu">
+
+        <div class="menu__burger" id="navToggle">
+            <div class="burger" id="navBurger"></div>
+            <p class="menu__title">
+                МЕНЮ
+            </p>
+        </div>
+
+        <nav class="header__nav nav" id="navBar">
+            <div class="nav__links">
+                <button class="nav__link" data-show-popup="1000" data-step="1"
+                        data-formsended="activate_promo_code_">
+                    Активировать промокод
+                </button>
+                <a class="nav__link" href="https://worldscipubl.com/cabinet/login"
+                   target="_blank">Личный кабинет</a>
+                <a class="nav__link" href="https://teletype.in/@wsp" target="_blank">
+                    Блог “Кафедра WSP”
+                </a>
+                <a class="nav__link" href="/#faq-section" target="_blank">F.A.Q.</a>
+                <a class="nav__link" href="/#footer-section"
+                   target="_blank">Контакты</a>
+                <a class="nav__link" href="/#footer-section" target="_blank">Соцсети</a>
+                <a class="nav__link nav__link--special" data-show-popup="1"
+                   data-step="1"
+                   data-formsended="submit_application_">
+                    Оставить заявку
+                </a>
+            </div>
+            <div class="nav__footer">
+                <img class="nav__logo lazy"
+                     src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                     data-src="./media/logo_footer.svg"
+                     alt="logo">
+                <p class="nav__date">2021 г.</p>
+            </div>
+
+            <img class="nav__header-logo"
+                 src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                 data-src="./media/logo-white.svg"
+                 alt="logo">
+        </nav>
+
+    </div>
+
+    <a class="header__call" href="tel:+74951277926">
+        <span class="header__call-text">RU | ENG</span>
+        <span class="header__call-text">+7 (495) 127 - 79 - 26</span>
+    </a>
+
+    <img class="header__logo lazy"
+         src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+         data-src="./media/logo.svg"
+         alt="logo">
+
+</header>
+
+
+<main>
+
+<section class="audit audit--without" id="audit">
+    <h2 class="audit__title container">
+        Предлагаем бесплатно <br>
+        проанализировать статью <br>
+        и рассчитать стоимость <br>
+        необходимых услуг
+    </h2>
+
+    <div class="audit__inner">
+        <form novalidate class="audit__form container" id="dran-n-drop" name="dran-n-drop"
+              action="/"
+              enctype="multipart/form-data" method="post">
+
+            <div class="audit__main">
+                <div class="audit__uploader uploader" id="file-upload-form">
+                    <input class="uploader__input-file" id="file-upload" type="file"
+                           name="fileUpload"
+                           accept=".pdf, .doc, .docx" required>
+                    <label class="uploader__inner" for="file-upload" id="file-drag">
+                        <div class="uploader__img lazy">
+                            <img class="uploader__cloud lazy"
+                                 src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                 data-src="./media/uploader_img.svg"
+                                 alt="uploader__cloud">
+                            <img class="uploader__arrow lazy"
+                                 src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                 data-src="./media/cloud_arrow.svg"
+                                 alt="uploader__arrow lazy">
+                            <img class="uploader__done lazy"
+                                 src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                                 data-src="./media/cloud_done.svg"
+                                 alt="uploader__done">
+                        </div>
+
+                        <span class="uploader__text"
+                              id="messages">Загрузите научную работу</span>
+                        <span class="input-wrapper__error"></span>
+                        <span class="uploader__text" id="status"></span>
+
+                        <span id="file-upload-btn" class="button button--upload">
+                                Загрузить статью (.pdf .doc .docx)
+                            </span>
+                    </label>
+                </div>
+                <p class="audit__desc">
+                    Проведем бесплатный технический аудит, чтобы оценить возможность
+                    публикации Вашей рукописи в
+                    журнале с необходимыми
+                    характеристиками, а также сформировать перечень требующихся
+                    доработок и рассчитать их стоимость
+                </p>
+                <div class="audit__fields">
+                    <div class="audit__inputs">
+                        <div class="input-wrapper">
+                            <input class="audit-form__input" type="email" name="email"
+                                   placeholder="Email куда направить результат"
+                                   pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                                   required>
+                            <span class="input-wrapper__error"></span>
+                        </div>
+                    </div>
+
+                    <div class="audit__btns">
+                        <div class="audit__submit">
+                            <span class="input-wrapper__error"></span>
+                            <button type="submit" id="fileUploadBtn"
+                                    class="button audit__btn" name="submit"
+                                    data-show-popup="finished" data-formsended="free_audit_"
+                                    data-step="1">
+                                Отправить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="audit__carousel audit-carousel">
+            <div class="audit-carousel__item">
+                <div class="audit-carousel__inner audit-cart">
+                    <div class="audit-cart__inner">
+                        <h3 class="audit-cart__title">Технический аудит</h3>
+                        <p class="audit-cart__text">
+                            Заранее определим необходимые доработки
+                            и их последовательность для
+                            успешной публикации Вашей рукописи
+                        </p>
+                        <button class="audit-cart__link"
+                                data-show-popup="200">Открыть пример
+                        </button>
+                    </div>
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/human_a.svg" alt="human_a"
+                         class="audit-cart__img lazy">
+                </div>
+            </div>
+
+            <div class="audit-carousel__item">
+                <div class="audit-carousel__inner audit-cart">
+                    <div class="audit-cart__inner">
+                        <h3 class="audit-cart__title">Предварительная экспертная
+                            оценка</h3>
+                        <p class="audit-cart__text">
+                            Проверим научную составляющую и получим ценные рекомендации
+                            от
+                            действующего рецензента авторитетного журнала по Вашей
+                            тематике
+                        </p>
+                        <button class="audit-cart__link"
+                                data-show-popup="202">Открыть пример
+                        </button>
+                    </div>
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/audit/humaaans-2.svg" alt="human_a"
+                         class="audit-cart__img lazy">
+                </div>
+            </div>
+
+            <div class="audit-carousel__item">
+                <div class="audit-carousel__inner audit-cart">
+                    <div class="audit-cart__inner">
+                        <h3 class="audit-cart__title">До / После</h3>
+                        <p class="audit-cart__text">
+                            Мы вкладываем 80% бюджета в доработку статьи, состоящую из
+                            11
+                            этапов. Посмотрите, как изменится Ваша статья перед
+                            отправкой в
+                            журнал
+                        </p>
+                        <button class="audit-cart__link" data-show-popup="206">
+                            Открыть пример
+                        </button>
+                    </div>
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/audit/humaaans-3.svg" alt="human_a"
+                         class="audit-cart__img lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Технический аудит-->
+<section id="popup-20" class="pop-up">
+    <div class="pop-up__main">
+        <div class="pop-up__inner popup-4">
+            <h3 class="pop-up__title">
+                Спасибо, в течение часа Вам будет направлено приветственное
+                письмо от ответственного специалиста. Пожалуйста, ознакомьтесь.
+            </h3>
+
+            <h3 class="pop-up__title">Хорошего дня!</h3>
+
+            <div class="pop-up__video">
+                <div class="pop-up__iframe lazy">
+                    <iframe class="reviews__iframe lazy"
+                            src="https://www.youtube.com/embed/KGs2k6BFbrQ"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="pop-up__social social">
+                <a href="https://teleg.run/worldscipubl" target="_blank"
+                   class="social__link">
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/social/telegram.png" alt="telegram"
+                         class="social__img lazy"/>
+                </a>
+                <a href="https://vk.com/worldscipubl/" target="_blank" class="social__link">
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/social/vk.png" alt="vk"
+                         class="social__img lazy"/>
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=%2B79086008126&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9D%D0%BE%D0%BC%D0%B5%D1%80+%D0%BC%D0%BE%D0%B5%D0%B9+%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B8%3A+undefined&app_absent=0"
+                   target="_blank" class="social__link">
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/social/whatsapp.png" alt="whatsapp"
+                         class="social__img lazy"/>
+                </a>
+                <a href="https://www.youtube.com/channel/UC9Wuvp-a1pZn_iHkPAFrwKA?view_as=subscriber"
+                   target="_blank"
+                   class="social__link">
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/social/youtube.png" alt="youtube"
+                         class="social__img lazy"/>
+                </a>
+                <a href="https://www.instagram.com/world.sci.publ/" target="_blank"
+                   class="social__link">
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/social/instagram.png" alt="instagram"
+                         class="social__img lazy"/>
+                </a>
+                <a href="https://www.facebook.com/worldscipubl/" target="_blank"
+                   class="social__link">
+                    <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                         data-src="./media/social/facebook.png" alt="facebook"
+                         class="social__img lazy"/>
+                </a>
+            </div>
+
+            <button class="pop-up__button pop-up__button--close">
+                Закрыть
+            </button>
+        </div>
+    </div>
+
+    <div class="pop-up__close">
+        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+             data-src="./media/X.svg" alt="" class="close_btn lazy"/>
+    </div>
+</section>
+</main>
+
+
+<noscript>
+    <img src="https://vk.com/rtrg?p=VK-RTRG-837729-8F4Pd"
+         style="position: fixed; left: -999px" alt=""/>
+</noscript>
+<noscript>
+    <img height="1" width="1" style="display: none"
+         src="https://www.facebook.com/tr?id=2365479983546227&ev=PageView&noscript=1"/>
+</noscript>
+<noscript>
+    <div>
+        <img src="https://mc.yandex.ru/watch/50181778"
+             style="position: absolute; left: -9999px" alt=""/>
+    </div>
+</noscript>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NF7Q6BJ" height="0"
+            width="0"
+            style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script>
+    var csrfToken = '<?=$_SESSION['csrf-token']?>';
+    // var csrfToken = 228;
+</script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.rawgit.com/rikmms/progress-bar-4-axios/0a3acf92/dist/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"
+        integrity="sha512-cA8gcgtYJ+JYqUe+j2JXl6J3jbamcMQfPe0JOmQGDescd+zqXwwgneDzniOd3k8PcO7EtTW6jA7L4Bhx03SXoA=="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
+
+<script src="./js/selector.js"></script>
+<script src="./js/pop-up.js"></script>
+<script src="./js/header.js"></script>
+
+<script src="./js/audit.js"></script>
+
+<script src="./js/forms.js"></script>
+<script src="./js/dragDrop.js"></script>
+<script src="./js/file_upload.js"></script>
+<script src="./js/async_image.js"></script>
+
+<!-- Roistat -->
+<script>
+    (function (w, d, s, h, id) {
+        w.roistatProjectId = id;
+        w.roistatHost = h;
+        var p = d.location.protocol == 'https:' ? 'https://' : 'http://';
+        var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ?
+            '/dist/module.js' :
+            '/api/site/1.0/' + id + '/init';
+        var js = d.createElement(s);
+        js.charset = 'UTF-8';
+        js.async = 1;
+        js.src = p + h + u;
+        var js2 = d.getElementsByTagName(s)[0];
+        js2.parentNode.insertBefore(js, js2);
+    })(
+        window,
+        document,
+        'script',
+        'cloud.roistat.com',
+        '3637cf6d91e2208e61bad15f7e17651d'
+    );
+</script>
+<!-- /Roistat -->
+
+</body>
+
+</html>
