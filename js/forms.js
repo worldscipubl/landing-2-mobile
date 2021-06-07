@@ -352,10 +352,17 @@ function initForm(_form) {
             const file_ep = 'add-file/';        // Загрзка файла
             const letter_ep = 'letter/';        // Вопрос из FAQ
             const is_exists = 'is-exists/';     // Проверка email
+            const add_lead = 'add-lead/';       // Отправка заявки
+
             let url = base_url;
 
-            if (sendData.get('file')) url += file_ep;
-            if (sendData.get('text')) url += letter_ep;
+            if (sendData.get('file'))
+                url += file_ep;
+            else if (sendData.get('text'))
+                url += letter_ep;
+            else
+                url += add_lead;
+
             _button.style.pointerEvents = "none";
             loadProgressBar();
             axios.post(
