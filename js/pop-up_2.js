@@ -239,3 +239,11 @@ buttons.forEach((button) => {
             popups.set(idShowPopUp, initPopUp(button));
     }
 });
+
+const _currentURLAudit = new URL(window.location.href);
+const _emailFromURL = _currentURLAudit.searchParams.get("e");
+
+if (_emailFromURL) {
+    const _inputEmailAudit = document.getElementById('input-email-audit');
+    _inputEmailAudit.value = _emailFromURL;
+}
