@@ -1,9 +1,9 @@
 <section class="audit audit--without" id="audit">
     <h2 class="audit__title container">
-        Предлагаем бесплатно <br>
-        проанализировать статью <br>
-        и рассчитать стоимость <br>
-        необходимых услуг
+        Получите подробный аудит<br>
+        исследования и пошаговый<br>
+        план для публикации в<br>
+        Scopus / Web of Science
     </h2>
 
     <div class="audit__inner">
@@ -42,36 +42,98 @@
                             </span>
                     </label>
                 </div>
-                <p class="audit__desc">
-                    Проведем бесплатный технический аудит, чтобы оценить возможность
-                    публикации Вашей рукописи в
-                    журнале с необходимыми
-                    характеристиками, а также сформировать перечень требующихся
-                    доработок и рассчитать их стоимость
-                </p>
-                <div class="audit__fields">
+
+                <div class="audit__container">
+                    <p class="audit__desc">
+                        Заполните данные:
+                    </p>
+
+                    <span class="audit__error"></span>
                     <div class="audit__inputs">
-                        <div class="input-wrapper">
-                            <input class="audit-form__input" type="email" name="email"
+                        <div class="input-wrapper audit__input">
+                            <input class="audit-form__input" type="text"
+                                   name="subject"
+                                   placeholder="Тематика статьи"
+                                   required>
+                            <span class="input-wrapper__error"></span>
+                        </div>
+                        <div class="input-wrapper audit__input">
+                            <input class="audit-form__input" type="email"
+                                   name="email"
                                    id="input-email-audit"
                                    placeholder="Email куда направить результат"
                                    pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
                                    required>
                             <span class="input-wrapper__error"></span>
                         </div>
+                        <div class="input-wrapper audit__input">
+                            <input class="audit-form__input" type="tel"
+                                   name="phone"
+                                   placeholder="Введите номер телефона"
+                                   pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+                                   required/>
+                            <span class="input-wrapper__error"></span>
+                        </div>
+                        <div class="input-wrapper audit__input">
+                            <input class="audit-form__input" type="text"
+                                   name="name"
+                                   placeholder="Имя" required/>
+                            <span class="input-wrapper__error"></span>
+                        </div>
                     </div>
-
-                    <div class="audit__btns">
-                        <div class="audit__submit">
+                    <div class="audit__action">
+                        <div class="audit__action-btn">
                             <span class="input-wrapper__error"></span>
                             <button type="submit" id="fileUploadBtn"
                                     class="button audit__btn" name="submit"
-                                    data-show-popup="finished" data-formsended="free_audit_"
+                                    data-show-popup="finished"
+                                    data-formsended="free_audit_"
                                     data-step="1">
                                 Отправить
                             </button>
                         </div>
+                        <div class="secure audit__action-secure">
+                            <div class="secure__inner">
+                                <div class="secure__picture">
+                                    <div class="secure-pic">
+                                        <img class="secure-pic__img"
+                                             src="./media/icons/security.svg"
+                                             alt="security">
+                                        <div class="secure-pic__txt-block">
+                                            <p class="secure-pic__txt">
+                                                100%
+                                            </p>
+                                            <p class="secure-pic__txt">
+                                                Secure
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="secure__text text_size_default">
+                                    Мы обеспечим конфиденциальность<br>
+                                    и безопасность ваших документов
+                                </p>
+                            </div>
+                        </div>
                     </div>
+                    <p class="audit__desc">
+                        Рецензия и результаты технического аудита покажут
+                        уровень
+                        готовности статьи к началу публикационных работ. Чем
+                        выше
+                        будет
+                        качество исходного материала, тем больше шансов пройти
+                        процесс
+                        публикации быстрее и получить публикацию в журнале <b
+                            class="text_weight_bold">с
+                        необходимым для Вас рейтингом.</b>
+                        <br>
+                        <br>
+                    </p>
+                    <p class="audit__desc audit__desc_bg_gray">
+                        * Количество редакторов ограничено<br>
+                        ** C 01.09.2021 стоимость данного аудита составит 100$
+                    </p>
                 </div>
             </div>
         </form>
