@@ -82,6 +82,12 @@
   }
 }
 
+@mixin _less-than($resolution: 180px) {
+  @media (max-width: $resolution) {
+    @content;
+  }
+}
+
 @mixin _more-than($resolution: 180px) {
   @media (min-width: $resolution) {
     @content;
